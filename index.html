@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masks &amp; Mirrors &mdash; DBT Adolescent Art Group</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ── Reset ── */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        /* ── Variables ── */
+        :root {
+            --text:       #1C1917;
+            --text-2:     #57534E;
+            --text-3:     #A8A29E;
+            --accent:     #9E4B6C;
+            --accent-bg:  #F5ECF0;
+            --cool:       #4A7A5A;
+            --cool-bg:    #ECF2EE;
+            --border:     #E7E5E4;
+            --bg:         #FAFAF7;
+            --surface:    #FFFFFF;
+        }
+
+        /* ── Global ── */
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.75;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent), var(--cool));
+            z-index: 999;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem 4rem;
+        }
+
+        @keyframes appear {
+            from { opacity: 0; }
+            to   { opacity: 1; }
+        }
+
+        /* ── Header ── */
+        .header { margin-bottom: 2.5rem; }
+        .header-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--accent);
+        }
+        h1 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+            color: var(--text);
+        }
+        .subtitle {
+            font-size: 1.05rem;
+            color: var(--text-2);
+            font-weight: 400;
+        }
+
+        /* ── Navigation ── */
+        .nav {
+            display: flex;
+            gap: 0.25rem;
+            border-bottom: 1px solid var(--border);
+            overflow-x: auto;
+            margin-bottom: 2.5rem;
+        }
+        .nav button {
+            background: none;
+            border: none;
+            border-bottom: 2px solid transparent;
+            padding: 0.75rem 1rem;
+            font-family: inherit;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--text-3);
+            cursor: pointer;
+            white-space: nowrap;
+            transition: color 0.15s, border-color 0.15s;
+        }
+        .nav button:hover { color: var(--text-2); }
+        .nav button.active {
+            color: var(--accent);
+            font-weight: 600;
+            border-bottom-color: var(--accent);
+        }
+
+        /* ── Pages ── */
+        .page { display: none; }
+        .page.active { display: block; animation: appear 0.25s ease; }
+
+        /* ── Typography ── */
+        .section-label {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-3);
+            margin-bottom: 0.5rem;
+        }
+        .section-label.warm { color: var(--accent); }
+        .section-label.cool { color: var(--cool); }
+
+        h2 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text);
+            letter-spacing: -0.01em;
+            margin-bottom: 0.75rem;
+        }
+        h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+        }
+        .body-text {
+            font-size: 0.95rem;
+            color: var(--text-2);
+            line-height: 1.8;
+        }
+        .body-text + .body-text { margin-top: 0.75rem; }
+        .body-text strong { color: var(--text); font-weight: 600; }
+
+        .timing {
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: var(--text-3);
+            float: right;
+            margin-top: 0.2rem;
+        }
+
+        /* ── Divider ── */
+        .divider { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
+
+        /* ── Callout ── */
+        .callout {
+            border-left: 3px solid var(--border);
+            padding: 1rem 1.25rem;
+            margin: 1.5rem 0;
+        }
+        .callout.warm { border-left-color: var(--accent); background: var(--accent-bg); }
+        .callout.cool { border-left-color: var(--cool); background: var(--cool-bg); }
+        .callout .callout-label {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-3);
+            margin-bottom: 0.4rem;
+        }
+        .callout.warm .callout-label { color: var(--accent); }
+        .callout.cool .callout-label { color: var(--cool); }
+        .callout p { font-size: 0.9rem; color: var(--text-2); line-height: 1.7; }
+        .callout p strong { color: var(--text); }
+
+        /* ── Steps ── */
+        .steps { margin: 1.5rem 0; }
+        .step {
+            display: flex;
+            gap: 1rem;
+            align-items: baseline;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .step:last-child { border-bottom: none; }
+        .step-num {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--text-3);
+            flex-shrink: 0;
+            width: 1.5rem;
+            text-align: right;
+        }
+        .step-content { flex: 1; }
+        .step-q { font-size: 0.95rem; font-weight: 600; color: var(--text); }
+        .step-hint { font-size: 0.82rem; color: var(--text-3); margin-top: 0.15rem; line-height: 1.6; }
+
+        /* ── Accordion ── */
+        .accordion { margin: 1.5rem 0; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+        .acc-item { border-bottom: 1px solid var(--border); }
+        .acc-item:last-child { border-bottom: none; }
+        .acc-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.25rem;
+            cursor: pointer;
+            background: var(--surface);
+            transition: background 0.15s;
+            user-select: none;
+        }
+        .acc-header:hover { background: var(--bg); }
+        .acc-title { font-size: 0.95rem; font-weight: 600; color: var(--text); }
+        .acc-icon {
+            font-size: 1.1rem;
+            color: var(--text-3);
+            transition: transform 0.2s;
+            font-weight: 300;
+            line-height: 1;
+        }
+        .acc-item.open .acc-icon { transform: rotate(45deg); }
+        .acc-body { display: none; padding: 0 1.25rem 1.25rem; background: var(--surface); }
+        .acc-item.open .acc-body { display: block; }
+        .acc-body p { font-size: 0.9rem; color: var(--text-2); line-height: 1.75; }
+        .acc-body p + p { margin-top: 0.75rem; }
+        .acc-body ul { list-style: none; margin-top: 0.5rem; }
+        .acc-body ul li {
+            font-size: 0.9rem; color: var(--text-2); line-height: 1.75;
+            padding-left: 1rem; position: relative;
+        }
+        .acc-body ul li::before { content: '\00B7'; position: absolute; left: 0; color: var(--text-3); }
+        .acc-body .aside {
+            margin-top: 0.75rem;
+            font-size: 0.85rem;
+            font-style: italic;
+            color: var(--text-3);
+            padding-left: 1rem;
+            border-left: 2px solid var(--border);
+        }
+
+        /* ── Letter Cards ── */
+        .letter-grid { display: grid; grid-template-columns: 1fr; gap: 0.75rem; margin: 1.5rem 0; }
+        .letter-card {
+            border: 1px solid var(--border); border-radius: 8px; overflow: hidden;
+            cursor: pointer; transition: border-color 0.15s;
+        }
+        .letter-card:hover { border-color: var(--accent); }
+        .letter-card.active { border-color: var(--accent); }
+        .letter-header { display: flex; align-items: center; gap: 1rem; padding: 1rem 1.25rem; background: var(--surface); }
+        .letter-char { font-size: 1.4rem; font-weight: 700; color: var(--accent); width: 2rem; flex-shrink: 0; text-align: center; }
+        .letter-card.cool-card .letter-char { color: var(--cool); }
+        .letter-name { font-size: 0.95rem; font-weight: 600; color: var(--text); }
+        .letter-brief { font-size: 0.8rem; color: var(--text-3); margin-top: 0.1rem; }
+        .letter-detail { display: none; padding: 1.25rem; background: var(--bg); border-top: 1px solid var(--border); }
+        .letter-card.active .letter-detail { display: block; }
+        .letter-detail p { font-size: 0.9rem; color: var(--text-2); line-height: 1.75; }
+        .letter-detail p + p { margin-top: 0.75rem; }
+        .letter-detail .aside {
+            margin-top: 0.75rem; font-size: 0.85rem; font-style: italic;
+            color: var(--text-3); padding-left: 1rem; border-left: 2px solid var(--border);
+        }
+
+        /* ── Scenario Cards ── */
+        .scenario-stack { margin: 1.5rem 0; }
+        .scenario-card { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; margin-bottom: 0.75rem; }
+        .scenario-body { padding: 1.5rem 1.5rem 1.25rem; background: var(--surface); }
+        .scenario-tag {
+            display: inline-block; font-size: 0.65rem; font-weight: 600;
+            letter-spacing: 0.1em; text-transform: uppercase;
+            padding: 0.2rem 0.5rem; border-radius: 3px; margin-bottom: 0.75rem;
+        }
+        .scenario-tag.abc { color: var(--accent); background: var(--accent-bg); }
+        .scenario-tag.please { color: var(--cool); background: var(--cool-bg); }
+        .scenario-text { font-size: 0.95rem; color: var(--text); line-height: 1.8; }
+        .scenario-reveal { display: none; padding: 1.25rem; border-top: 1px solid var(--border); background: var(--bg); }
+        .scenario-reveal.show { display: block; }
+        .scenario-reveal p { font-size: 0.9rem; color: var(--text-2); line-height: 1.75; }
+        .reveal-btn-row { border-top: 1px solid var(--border); text-align: center; }
+        .reveal-btn {
+            width: 100%; padding: 0.9rem; border: none; font-family: inherit;
+            font-size: 0.85rem; font-weight: 600; cursor: pointer;
+            background: var(--surface); color: var(--text-3);
+            transition: background 0.15s, color 0.15s;
+        }
+        .reveal-btn:hover { background: var(--bg); color: var(--text-2); }
+        .reveal-btn.revealed { color: var(--accent); background: var(--accent-bg); cursor: default; }
+
+        /* ── Discussion Questions ── */
+        .questions { margin: 1.5rem 0; }
+        .question { padding: 1rem 0; border-bottom: 1px solid var(--border); }
+        .question:last-child { border-bottom: none; }
+        .question-label {
+            font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em;
+            text-transform: uppercase; color: var(--text-3); margin-bottom: 0.3rem;
+        }
+        .question-text { font-size: 0.95rem; font-weight: 500; color: var(--text); line-height: 1.7; }
+        .question-note { font-size: 0.82rem; font-style: italic; color: var(--text-3); margin-top: 0.3rem; }
+
+        /* ── Options Grid ── */
+        .options-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
+            background: var(--border); border: 1px solid var(--border);
+            border-radius: 8px; overflow: hidden; margin: 1.5rem 0;
+        }
+        .option { background: var(--surface); padding: 1.25rem; cursor: pointer; transition: background 0.15s; }
+        .option:hover { background: var(--bg); }
+        .option.selected { background: var(--accent-bg); }
+        .option-label { font-size: 0.9rem; font-weight: 600; color: var(--text); margin-bottom: 0.2rem; }
+        .option-desc { font-size: 0.8rem; color: var(--text-3); line-height: 1.5; }
+
+        /* ── Page Nav ── */
+        .page-nav {
+            display: flex; justify-content: space-between; align-items: center;
+            margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border);
+        }
+        .page-nav button {
+            background: none; border: none; font-family: inherit; font-size: 0.9rem;
+            font-weight: 500; color: var(--accent); cursor: pointer; padding: 0.5rem 0;
+            transition: opacity 0.15s;
+        }
+        .page-nav button:hover { opacity: 0.7; }
+        .page-nav .ghost { visibility: hidden; }
+
+        /* ── Footer ── */
+        .footer {
+            margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border);
+            text-align: center; font-size: 0.8rem; color: var(--text-3); line-height: 1.8;
+        }
+        .footer strong { color: var(--text-2); font-weight: 600; }
+
+        /* ── Station Grid ── */
+        .station-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 0.75rem;
+            margin: 1.5rem 0;
+        }
+        .station-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.25rem;
+            cursor: pointer;
+            transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
+            text-align: center;
+        }
+        .station-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .station-card.visited {
+            border-color: var(--cool);
+            background: var(--cool-bg);
+        }
+        .station-symbol {
+            font-size: 1.8rem;
+            display: block;
+            margin-bottom: 0.5rem;
+            line-height: 1;
+        }
+        .station-card h3 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 0.25rem;
+        }
+        .station-subtitle {
+            font-size: 0.75rem;
+            color: var(--text-3);
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+        .station-desc {
+            font-size: 0.8rem;
+            color: var(--text-2);
+            line-height: 1.5;
+        }
+
+        /* ── Progress Badges ── */
+        .progress-section {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1rem 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+        .progress-section h3 {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-3);
+            margin-bottom: 0.75rem;
+        }
+        .progress-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        .progress-badge {
+            padding: 0.3rem 0.75rem;
+            border-radius: 50px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            color: var(--text-3);
+            font-size: 0.75rem;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+        .progress-badge.completed {
+            background: var(--cool);
+            border-color: var(--cool);
+            color: white;
+        }
+
+        /* ── Modal ── */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            backdrop-filter: blur(4px);
+        }
+        .modal.show { display: flex; }
+        .modal-content {
+            background: var(--surface);
+            border-radius: 12px;
+            padding: 2rem;
+            max-width: 640px;
+            width: 100%;
+            max-height: 85vh;
+            overflow-y: auto;
+            position: relative;
+            animation: appear 0.2s ease;
+        }
+        .modal-content::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent), var(--cool));
+            border-radius: 12px 12px 0 0;
+        }
+        .modal-close {
+            position: absolute;
+            top: 0.75rem; right: 1rem;
+            background: none; border: none;
+            font-size: 1.3rem; cursor: pointer;
+            color: var(--text-3);
+            width: 32px; height: 32px;
+            display: flex; align-items: center; justify-content: center;
+            border-radius: 50%;
+            transition: background 0.15s, color 0.15s;
+        }
+        .modal-close:hover { background: var(--bg); color: var(--text); }
+
+        .modal-station-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 0.25rem;
+        }
+        .modal-station-subtitle {
+            font-size: 0.85rem;
+            color: var(--text-3);
+            font-style: italic;
+            margin-bottom: 1.25rem;
+        }
+
+        /* ── Prompt List ── */
+        .prompt-list { list-style: none; margin: 1rem 0; }
+        .prompt-list li {
+            padding: 1rem 1.25rem;
+            background: var(--bg);
+            border-radius: 6px;
+            margin-bottom: 0.5rem;
+            color: var(--text-2);
+            line-height: 1.7;
+            font-size: 0.9rem;
+            border-left: 3px solid var(--accent);
+        }
+        .prompt-list li strong { color: var(--text); }
+
+        /* ── Materials List ── */
+        .materials-list {
+            margin: 1rem 0;
+            padding: 0.75rem 1rem;
+            background: var(--bg);
+            border-radius: 6px;
+            border: 1px solid var(--border);
+        }
+        .materials-label {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-3);
+            margin-bottom: 0.4rem;
+        }
+        .materials-list ul {
+            list-style: none;
+            columns: 2;
+            column-gap: 1rem;
+        }
+        .materials-list ul li {
+            font-size: 0.8rem;
+            color: var(--text-2);
+            line-height: 1.6;
+            padding-left: 0.75rem;
+            position: relative;
+            break-inside: avoid;
+        }
+        .materials-list ul li::before {
+            content: '\00B7';
+            position: absolute;
+            left: 0;
+            color: var(--text-3);
+        }
+
+        /* ── Info Box ── */
+        .info-box {
+            background: var(--cool-bg);
+            border-left: 3px solid var(--cool);
+            padding: 0.75rem 1rem;
+            border-radius: 0 6px 6px 0;
+            margin: 1rem 0;
+        }
+        .info-box p {
+            font-size: 0.82rem;
+            color: var(--text-2);
+            line-height: 1.6;
+        }
+        .info-box p strong { color: var(--text); }
+
+        .info-box.warm {
+            background: var(--accent-bg);
+            border-left-color: var(--accent);
+        }
+
+        /* ── Meditation Box ── */
+        .meditation-box {
+            background: var(--accent-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .meditation-box h3 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 0.75rem;
+        }
+        .meditation-box p {
+            font-size: 0.9rem;
+            color: var(--text-2);
+            line-height: 1.8;
+        }
+        .meditation-box p + p { margin-top: 0.5rem; }
+        .meditation-box .med-prompt {
+            font-style: italic;
+            color: var(--text);
+            margin: 0.75rem 0;
+            padding-left: 1rem;
+            border-left: 2px solid var(--accent);
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 600px) {
+            .container { padding: 2rem 1.25rem 3rem; }
+            h1 { font-size: 1.8rem; }
+            .options-grid { grid-template-columns: 1fr; }
+            .station-grid { grid-template-columns: 1fr 1fr; }
+            .materials-list ul { columns: 1; }
+        }
+
+        @media (max-width: 400px) {
+            .station-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header class="header">
+        <div class="header-label">DBT Skills &mdash; Adolescent Art Group</div>
+        <h1>Masks &amp; Mirrors</h1>
+        <p class="subtitle">Exploring the space between who you show and who you are</p>
+    </header>
+
+    <nav class="nav">
+        <button class="active" onclick="showPage(0, this)">Welcome</button>
+        <button onclick="showPage(1, this)">The Theme</button>
+        <button onclick="showPage(2, this)">Stations</button>
+        <button onclick="showPage(3, this)">Gallery &amp; Close</button>
+    </nav>
+
+    <!-- ════════════════════════════════════════ PAGE 0: WELCOME ════════════════════════════════════════ -->
+    <div class="page active">
+        <div class="section-label warm">Welcome</div>
+        <h2><span class="timing">5 to 8 min</span>About today</h2>
+        <p class="body-text">Today's group is an art therapy session. You'll move freely between seven creative stations, each offering a different way to explore the same question: what's the difference between the version of you that other people see and the version of you that exists when no one is watching?</p>
+        <p class="body-text">There is no right way to do this. You don't need to be an artist. You don't need to share anything you make. You choose your stations, your pace, and your depth.</p>
+
+        <div class="callout warm">
+            <div class="callout-label">Confidentiality</div>
+            <p>What's shared in group stays in group. If you reference group outside this room, talk about your own experience only. Other people's stories are not yours to tell.</p>
+        </div>
+
+        <div class="callout">
+            <div class="callout-label">Participation</div>
+            <p><strong>You can pass at any point.</strong> No explanation needed. If something doesn't fit right now, say "pass" and we move on.</p>
+        </div>
+
+        <div class="meditation-box">
+            <h3>Opening: Hands as Mirrors</h3>
+            <p>Everyone receives a small stone or wooden disc. This is your grounding object for the session. You can carry it station to station.</p>
+            <p>Three slow breaths. On each exhale, let your hands rest open in your lap, palms up. Notice the temperature, weight, and texture of the stone against your skin.</p>
+            <p class="med-prompt">"Close your hands around the stone. Notice what it feels like to hold something hidden, something only you can feel. You don't have to name it."</p>
+            <p class="med-prompt">"Now open your hands again. Notice the difference. Not better or worse. Just different."</p>
+            <p>This is a mindfulness observe-and-describe exercise. You're practicing noticing physical sensation without judging it.</p>
+        </div>
+
+        <hr class="divider">
+
+        <div class="section-label">Check-in</div>
+        <h2><span class="timing">8 to 10 min</span>Bridge questions</h2>
+        <p class="body-text">Answer whichever one pulls you. One or two sentences is enough.</p>
+
+        <div class="steps">
+            <div class="step">
+                <div class="step-num">1</div>
+                <div class="step-content">
+                    <div class="step-q">When was the last time you felt like someone saw the real you?</div>
+                    <div class="step-hint">Could be a specific moment, a relationship, or a context where you felt less filtered.</div>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-num">2</div>
+                <div class="step-content">
+                    <div class="step-q">What's one thing your "public self" does that your private self finds exhausting?</div>
+                    <div class="step-hint">Think about performances you maintain at school, online, or at home. What costs you energy?</div>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-num">3</div>
+                <div class="step-content">
+                    <div class="step-q">If you could take off one mask for the rest of today, which one would it be?</div>
+                    <div class="step-hint">Name the mask by what it does ("the one that says I'm fine," "the one that smiles when I'm angry").</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-nav">
+            <button class="ghost">&#8592; Back</button>
+            <button onclick="showPage(1, navBtns[1])">The Theme &#8594;</button>
+        </div>
+    </div>
+
+    <!-- ════════════════════════════════════════ PAGE 1: THE THEME ════════════════════════════════════════ -->
+    <div class="page">
+        <div class="section-label warm">Understanding</div>
+        <h2><span class="timing">10 min</span>Masks, mirrors, and the space between</h2>
+        <p class="body-text">Everyone curates how they appear. On social media, at school, in families, in treatment. This is normal. The question isn't whether you do it, but whether you get to choose when.</p>
+
+        <div class="accordion">
+            <div class="acc-item">
+                <div class="acc-header" onclick="toggleAcc(this)">
+                    <span class="acc-title">What masks are</span>
+                    <span class="acc-icon">+</span>
+                </div>
+                <div class="acc-body">
+                    <p>A mask is any version of yourself you present because you believe the real version won't be accepted, safe, or good enough. Masks aren't inherently bad. Some protect you in genuinely unsafe situations. The problem starts when you can't tell the difference between choosing a mask and being trapped inside one.</p>
+                    <p>In DBT terms, masks relate to <strong>interpersonal effectiveness</strong>. The FAST skill (Fair, no Apologies, Stick to values, Truthful) describes what it looks like to show up without a mask in relationships. Most people find this terrifying.</p>
+                </div>
+            </div>
+            <div class="acc-item">
+                <div class="acc-header" onclick="toggleAcc(this)">
+                    <span class="acc-title">Why we wear them</span>
+                    <span class="acc-icon">+</span>
+                </div>
+                <div class="acc-body">
+                    <p>Masks serve real functions. They manage other people's perceptions. They prevent rejection. They keep the peace. For many people in recovery, the eating disorder itself functions as a mask: a way to communicate distress without having to say it directly, or a way to feel in control of how the world perceives you.</p>
+                    <p>Recognizing why you wear a mask is not the same as taking it off. Today's group is about noticing the gap between inside and outside. What you do with that information is your choice, on your timeline.</p>
+                </div>
+            </div>
+            <div class="acc-item">
+                <div class="acc-header" onclick="toggleAcc(this)">
+                    <span class="acc-title">What mirrors reveal</span>
+                    <span class="acc-icon">+</span>
+                </div>
+                <div class="acc-body">
+                    <p>A physical mirror shows the outside. Art can show the inside. The stations in this group offer seven different "mirrors" for parts of yourself that don't have a reflection yet.</p>
+                    <p>In DBT, this connects to <strong>mindfulness</strong>: the practice of observing your internal experience without judging it or trying to change it. And to <strong>validation</strong>: treating your own feelings and experiences as real and understandable, even the ones you hide.</p>
+                    <div class="aside">The word "mirror" in this session is always metaphorical. There are no physical mirrors in the room. The point is to see yourself through what you create, not through how you appear.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="callout cool">
+            <div class="callout-label">Clinical note</div>
+            <p>This session frames identity work through <strong>what you show, what you feel, and the space between</strong>. It avoids direct body-image language. If participants bring body-related content into their art, validate the feeling without reinforcing the cognition: "It sounds like that feeling takes up a lot of space."</p>
+        </div>
+
+        <div class="page-nav">
+            <button onclick="showPage(0, navBtns[0])">&#8592; Welcome</button>
+            <button onclick="showPage(2, navBtns[2])">Stations &#8594;</button>
+        </div>
+    </div>
+
+    <!-- ════════════════════════════════════════ PAGE 2: STATIONS ════════════════════════════════════════ -->
+    <div class="page">
+        <div class="section-label warm">Free roam</div>
+        <h2><span class="timing">50 to 60 min</span>Seven stations</h2>
+        <p class="body-text">Move between stations at your own pace. You can visit as many or as few as you want. Click a station to see the prompts and materials.</p>
+
+        <div class="progress-section">
+            <h3>Your stations</h3>
+            <div class="progress-badges">
+                <div class="progress-badge" data-station="mask">The Mask I Wear</div>
+                <div class="progress-badge" data-station="voice">Found Voice</div>
+                <div class="progress-badge" data-station="sound">Soundscape Self</div>
+                <div class="progress-badge" data-station="photo">Refracted</div>
+                <div class="progress-badge" data-station="weave">Woven Selves</div>
+                <div class="progress-badge" data-station="collage">The Space Between</div>
+                <div class="progress-badge" data-station="move">Moving Through</div>
+            </div>
+        </div>
+
+        <div class="station-grid">
+            <div class="station-card" onclick="openStation('mask')">
+                <div class="station-symbol">&#9670;</div>
+                <h3>The Mask I Wear</h3>
+                <p class="station-subtitle">Mixed Media</p>
+                <p class="station-desc">Decorate the outside for the world, the inside for yourself.</p>
+            </div>
+
+            <div class="station-card" onclick="openStation('voice')">
+                <div class="station-symbol">&#9998;</div>
+                <h3>Found Voice</h3>
+                <p class="station-subtitle">Blackout Poetry</p>
+                <p class="station-desc">Find poems hiding in other people's words.</p>
+            </div>
+
+            <div class="station-card" onclick="openStation('sound')">
+                <div class="station-symbol">&#9835;</div>
+                <h3>Soundscape Self</h3>
+                <p class="station-subtitle">Music &amp; Sound</p>
+                <p class="station-desc">Build playlists for the self you show and the self you feel.</p>
+            </div>
+
+            <div class="station-card" onclick="openStation('photo')">
+                <div class="station-symbol">&#9683;</div>
+                <h3>Refracted</h3>
+                <p class="station-subtitle">Photography</p>
+                <p class="station-desc">See yourself through texture, distortion, and fragment.</p>
+            </div>
+
+            <div class="station-card" onclick="openStation('weave')">
+                <div class="station-symbol">&#9881;</div>
+                <h3>Woven Selves</h3>
+                <p class="station-subtitle">Textile &amp; Fiber</p>
+                <p class="station-desc">Weave layers that represent outside and inside experience.</p>
+            </div>
+
+            <div class="station-card" onclick="openStation('collage')">
+                <div class="station-symbol">&#9635;</div>
+                <h3>The Space Between</h3>
+                <p class="station-subtitle">Collage</p>
+                <p class="station-desc">Split-panel: what you show on one side, what you keep on the other.</p>
+            </div>
+
+            <div class="station-card" onclick="openStation('move')">
+                <div class="station-symbol">&#10047;</div>
+                <h3>Moving Through</h3>
+                <p class="station-subtitle">Movement</p>
+                <p class="station-desc">Find poses and gestures for your mask and what's underneath.</p>
+            </div>
+        </div>
+
+        <div class="callout cool">
+            <div class="callout-label">Facilitator note</div>
+            <p>At the 30-minute mark: "You have about 30 minutes left. If there's a station you haven't tried, this is a good time to explore." At the 10-minute mark: "Start finding a stopping point. We'll come back together soon."</p>
+        </div>
+
+        <div class="page-nav">
+            <button onclick="showPage(1, navBtns[1])">&#8592; The Theme</button>
+            <button onclick="showPage(3, navBtns[3])">Gallery &amp; Close &#8594;</button>
+        </div>
+    </div>
+
+    <!-- ════════════════════════════════════════ PAGE 3: GALLERY & CLOSE ════════════════════════════════════════ -->
+    <div class="page">
+        <div class="section-label warm">Coming back together</div>
+        <h2><span class="timing">8 to 10 min</span>Gallery walk</h2>
+        <p class="body-text">Place any work you're willing to share on the communal table. Anonymous or named, your choice. Walk silently around the display for three to four minutes. No verbal commentary during the walk.</p>
+        <p class="body-text">You have dot stickers. Place a dot next to any piece that resonates with you. You don't have to explain why. If you don't want to display any work, place your grounding stone on the table as your contribution.</p>
+
+        <hr class="divider">
+
+        <div class="section-label">Circle</div>
+        <h2><span class="timing">5 to 7 min</span>One true thing</h2>
+        <p class="body-text">Each person completes one sentence:</p>
+        <p class="body-text"><strong>"One true thing I noticed today is _______________."</strong></p>
+        <p class="body-text">This can reference your own work, someone else's, a feeling you had, or something about the process. After each person shares, the group response is one word: "Heard." No cross-talk, no follow-up questions.</p>
+
+        <div class="callout cool">
+            <div class="callout-label">Facilitator note</div>
+            <p>Model first with a genuine observation. "One true thing" can be as concrete as "I noticed I liked the blue yarn" and does not need to be emotionally deep. The protocol protects participants from the pressure of emotional performance while still creating witness.</p>
+        </div>
+
+        <hr class="divider">
+
+        <div class="section-label cool">This week</div>
+        <h2><span class="timing">3 min</span>Pick one</h2>
+        <p class="body-text">Choose one thing to try before next group. You're not committing to a habit. You're running a single experiment.</p>
+
+        <div class="options-grid">
+            <div class="option" onclick="selectOption(this)">
+                <div class="option-label">Notice one mask</div>
+                <div class="option-desc">Catch yourself performing a version of you that doesn't match what you feel. Just notice. Don't change it yet.</div>
+            </div>
+            <div class="option" onclick="selectOption(this)">
+                <div class="option-label">One honest sentence</div>
+                <div class="option-desc">Say one true thing to someone you trust that you would normally filter out or soften.</div>
+            </div>
+            <div class="option" onclick="selectOption(this)">
+                <div class="option-label">Make something ugly</div>
+                <div class="option-desc">Create something with no intention of it being good. A sketch, a playlist, a poem. Let perfectionism lose once.</div>
+            </div>
+            <div class="option" onclick="selectOption(this)">
+                <div class="option-label">Mirror check-in</div>
+                <div class="option-desc">Spend 60 seconds with your grounding stone. Hands closed, then open. Notice the difference. Write one word about it.</div>
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        <div class="section-label">Checkout</div>
+        <h2>One sentence</h2>
+        <p class="body-text">Before you leave: one thing you're taking with you from today, and one concrete thing you'll try this week. Specifics help. "I'll try the honest sentence thing with my mom on Thursday" works better than "I'll be more real."</p>
+
+        <div class="callout cool">
+            <div class="callout-label">Facilitator note</div>
+            <p>Push gently for specificity. "Who will you say it to?" and "When this week?" turn vague intentions into testable commitments. If a participant is vague, reflect it back without judgment: "That sounds important. Can you name one specific moment you'd try it?"</p>
+        </div>
+
+        <div class="footer">
+            <strong>Crisis resources</strong><br>
+            988 Suicide &amp; Crisis Lifeline: call or text <strong>988</strong><br>
+            Crisis Text Line: text <strong>HELLO</strong> to 741741
+        </div>
+    </div>
+</div>
+
+<!-- ════════════════════════════════════════ MODAL ════════════════════════════════════════ -->
+<div id="stationModal" class="modal">
+    <div class="modal-content">
+        <button class="modal-close" onclick="closeStation()">&times;</button>
+        <div id="modalBody"></div>
+    </div>
+</div>
+
+<script>
+const pages = document.querySelectorAll('.page');
+const navBtns = document.querySelectorAll('.nav button');
+
+function showPage(idx, btn) {
+    pages.forEach(p => p.classList.remove('active'));
+    navBtns.forEach(b => b.classList.remove('active'));
+    pages[idx].classList.add('active');
+    navBtns[idx].classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function toggleAcc(header) {
+    header.parentElement.classList.toggle('open');
+}
+
+function toggleLetter(card) {
+    const wasActive = card.classList.contains('active');
+    card.parentElement.querySelectorAll('.letter-card').forEach(c => c.classList.remove('active'));
+    if (!wasActive) card.classList.add('active');
+}
+
+function revealScenario(id, btn) {
+    const panel = document.getElementById(id);
+    panel.classList.add('show');
+    btn.classList.add('revealed');
+    btn.textContent = 'Response shown';
+    btn.disabled = true;
+}
+
+function selectOption(el) {
+    el.classList.toggle('selected');
+}
+
+/* ── Station Data ── */
+const stationContent = {
+    mask: {
+        title: 'The Mask I Wear',
+        subtitle: 'Mixed Media / Sculpture',
+        materials: ['Pre-formed blank masks', 'Acrylic paint &amp; brushes', 'Collage materials (fabric, buttons, sequins, feathers)', 'Markers (fine and broad)', 'Glue sticks, Mod Podge', 'Small craft mirrors (for the mask, not for you)', 'Index cards for labeling'],
+        prompts: [
+            '<strong>Outside / Inside:</strong> Decorate the outside of the mask the way others see you, or the way you want others to see you. On the inside (the concave surface), use color, texture, or words to show what you actually feel.',
+            '<strong>Name the feeling:</strong> Create a mask for a feeling you hide. Give it a name.',
+            '<strong>Recovery mask:</strong> Make a mask that shows what recovery looks like on the outside versus what it feels like on the inside.',
+            '<strong>The one you\'d remove:</strong> Build a mask you wish you could take off. What would your face look like underneath?'
+        ],
+        note: 'Use pre-formed masks, not plaster-on-face casting. If a participant writes content related to body hatred, validate the feeling without reinforcing the cognition: "It sounds like that feeling takes up a lot of space."'
+    },
+    voice: {
+        title: 'Found Voice',
+        subtitle: 'Blackout Poetry &amp; Found-Word Collage',
+        materials: ['Photocopied pages from novels and poetry (pre-screened)', 'Black markers (fine and chisel)', 'Colored pencils &amp; gel pens', 'Washi tape', 'Blank cardstock', 'Glue sticks &amp; scissors', 'Pre-cut word bank strips'],
+        prompts: [
+            '<strong>The hidden poem:</strong> Find a poem hiding in this page. Black out everything except the words that feel true about who you really are underneath.',
+            '<strong>Two poems, one page:</strong> Make two blackout poems from the same page: one that sounds like your "public self," one that sounds like your private thoughts.',
+            '<strong>What the mirror doesn\'t show:</strong> Use the word bank strips and your own handwriting to build a poem with that title.',
+            '<strong>Wish they understood:</strong> Find words on the page that describe what you wish someone understood about you. Circle them. Connect them.'
+        ],
+        note: 'All source texts are pre-screened to exclude diet culture language, body commentary, or food-focused content. The word bank avoids body-related words. Blackout poetry is one of the lowest-threat art forms because you\'re selecting rather than generating.'
+    },
+    sound: {
+        title: 'Soundscape Self',
+        subtitle: 'Music &amp; Sound',
+        materials: ['Tablets or Chromebooks with headphones', 'Curated music library (Spotify or pre-downloaded)', 'Printed Soundscape Map worksheets', 'Colored pencils', 'Small percussion instruments (rain stick, hand drum, chime bar)', 'Index cards'],
+        prompts: [
+            '<strong>Two playlists:</strong> Build two short playlists (3 to 5 songs each): one that represents the version of you others see, and one that represents who you are when no one is watching. Fill in your Soundscape Map.',
+            '<strong>One song:</strong> Find one song that captures a feeling you\'ve never said out loud. Write down the title and one sentence about why.',
+            '<strong>Two rhythms:</strong> Use the percussion instruments to create two short rhythms: one that sounds like your mask and one that sounds like what\'s underneath.',
+            '<strong>Liner notes:</strong> Write a liner note for an album about your life that nobody else has heard. What would listeners need to know before pressing play?'
+        ],
+        note: 'The music library is pre-screened for content. Headphones provide a private, boundaried experience. The percussion option gives a body-based alternative that avoids lyric content entirely.'
+    },
+    photo: {
+        title: 'Refracted',
+        subtitle: 'Abstracted Photography',
+        materials: ['Tablets or phones with cameras', 'Textured glass, prisms, colored cellophane', 'Lace fabric, small LED lights', 'Photo printer (Polaroid style)', 'Black and white cardstock for mounting', 'Markers for captioning'],
+        prompts: [
+            '<strong>Through the filter:</strong> Take a self-portrait through one of the textured materials (glass, prism, cellophane, lace). Don\'t try to get a clear image. The distortion IS the art. Title it.',
+            '<strong>Hands:</strong> Photograph your hands doing something that feels like the real you. Avoid including your face.',
+            '<strong>Shadow and symbol:</strong> Take two photos: one of your shadow, and one of something in this room that represents how you feel right now. Pair them together with a one-sentence caption.',
+            '<strong>The detail nobody notices:</strong> Photograph a small detail of yourself (wrist, shoe, ear, knuckle) that nobody notices. Give it a title like it\'s in a museum.'
+        ],
+        note: 'No full-face, full-body, or mirror selfies. All prompts are designed to fragment, abstract, or redirect the gaze. Textured glass ensures any self-portrait is inherently distorted, normalizing the idea that self-perception is always filtered. If a participant becomes distressed, redirect to the shadow or detail prompts.'
+    },
+    weave: {
+        title: 'Woven Selves',
+        subtitle: 'Textile &amp; Fiber',
+        materials: ['Small cardboard looms (pre-strung)', 'Yarn in assorted colors and textures', 'Fabric strips (denim, flannel, satin, burlap, tulle)', 'Ribbon, embroidery floss', 'Blunt-tip tapestry needles', 'Scissors', 'Color/texture reference cards'],
+        prompts: [
+            '<strong>Two layers:</strong> Weave two layers: the top represents what people see (choose matching textures and colors). Underneath, weave with textures and colors that represent your inner experience.',
+            '<strong>Three strips:</strong> Choose three fabric strips. One for who you were before your eating disorder, one for who you are now, and one for who you want to become. Weave them together.',
+            '<strong>Self-soothe:</strong> Make a small woven piece using only textures you find comforting. This is a self-soothing object you can keep.',
+            '<strong>Messy on purpose:</strong> Weave something messy. Let threads hang, mix clashing colors, leave gaps. Title it.'
+        ],
+        note: 'If a participant appears to be weaving rigidly or perfectionistically (tight, controlled rows, visible frustration at mistakes), gently invite them to try the "messy on purpose" prompt. Fabric strips are pre-cut. The color/texture reference card uses suggestions, not assignments.'
+    },
+    collage: {
+        title: 'The Space Between',
+        subtitle: 'Split-Panel Collage',
+        materials: ['Large cardstock, pre-folded down the middle', 'Pre-screened magazines (nature, architecture, travel, abstract)', 'Printed image packs (landscapes, textures, doors, windows)', 'Oil pastels &amp; soft pastels', 'Glue sticks &amp; scissors', 'Tissue paper for layering'],
+        prompts: [
+            '<strong>Left / Right / Fold:</strong> On the left panel, collage "What I Let People See." On the right, "What I Keep Hidden." In the fold between them, write or draw what lives in the gap.',
+            '<strong>Doors and walls:</strong> Create a collage of doors, windows, and walls. Some open, some closed, some cracked. Label which parts of yourself each one represents.',
+            '<strong>Inner landscape:</strong> Build a landscape that represents your inner world right now. Weather, terrain, time of day are all choices.',
+            '<strong>Torn, not cut:</strong> Tear (don\'t cut) images and paper to create a collage. The rough edges are part of the piece. Title it "Unfinished."'
+        ],
+        note: 'Magazines are pre-screened: no fashion, fitness, diet, food, or celebrity content. Printed image packs provide curated, body-neutral imagery. Oil pastels are preferred over finger paint (which can feel regressive, and its tactile similarity to food substances can be triggering for this population).'
+    },
+    move: {
+        title: 'Moving Through',
+        subtitle: 'Guided Movement &amp; Gesture',
+        materials: ['Defined floor space (tape or rug, ~8x8 ft)', 'Scarves or fabric lengths (silk, chiffon)', 'Printed prompt cards at eye level', 'Bluetooth speaker with ambient playlist', 'Privacy screen or curtain'],
+        prompts: [
+            '<strong>Two poses:</strong> Find a pose that represents "the version of me other people see." Hold it for three breaths. Now shift into a pose for "the version of me that\'s real." Notice what changed.',
+            '<strong>Scarf movement:</strong> Choose a scarf. Move it the way your hidden feelings would move if they had a body. Fast, slow, sharp, flowing.',
+            '<strong>Gentle adjust:</strong> With a partner or alone: strike a "mask pose" (how you present). Then gently adjust one small thing (angle of hand, tilt of head) toward what feels more authentic.',
+            '<strong>Three walks:</strong> Walk across the space three times. First: the way you walk when people are watching. Second: the way you walk alone. Third: as if no one has ever told you how to walk.'
+        ],
+        note: 'This station must have a privacy screen. All prompts avoid references to body shape, size, weight, or appearance. Offer the scarf prompt as a default entry point because it externalizes movement onto the object. If a participant shows signs of dissociation (glazed expression, sudden stillness), redirect to the grounding stone. Partner work is fully optional.'
+    }
+};
+
+let visitedStations = new Set();
+
+function openStation(id) {
+    const s = stationContent[id];
+    const modal = document.getElementById('stationModal');
+    const body = document.getElementById('modalBody');
+
+    visitedStations.add(id);
+    updateProgress(id);
+
+    let promptsHtml = '<ul class="prompt-list">';
+    s.prompts.forEach(p => { promptsHtml += '<li>' + p + '</li>'; });
+    promptsHtml += '</ul>';
+
+    let materialsHtml = '<div class="materials-list"><div class="materials-label">Materials at this station</div><ul>';
+    s.materials.forEach(m => { materialsHtml += '<li>' + m + '</li>'; });
+    materialsHtml += '</ul></div>';
+
+    body.innerHTML =
+        '<div class="modal-station-title">' + s.title + '</div>' +
+        '<div class="modal-station-subtitle">' + s.subtitle + '</div>' +
+        '<p class="body-text" style="margin-bottom:1rem;">Choose one or more prompts. There\'s no requirement to do all of them.</p>' +
+        promptsHtml +
+        materialsHtml +
+        '<div class="info-box"><p><strong>Facilitator note:</strong> ' + s.note + '</p></div>';
+
+    modal.classList.add('show');
+}
+
+function closeStation() {
+    document.getElementById('stationModal').classList.remove('show');
+}
+
+function updateProgress(id) {
+    const badge = document.querySelector('[data-station="' + id + '"]');
+    if (badge) badge.classList.add('completed');
+
+    document.querySelectorAll('.station-card').forEach(card => {
+        if (card.getAttribute('onclick') && card.getAttribute('onclick').indexOf(id) !== -1) {
+            card.classList.add('visited');
+        }
+    });
+}
+
+// Close modal on backdrop click
+document.getElementById('stationModal').addEventListener('click', function(e) {
+    if (e.target === this) closeStation();
+});
+
+// Close modal on Escape
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeStation();
+});
+</script>
+</body>
+</html>
