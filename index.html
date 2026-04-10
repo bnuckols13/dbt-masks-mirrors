@@ -592,7 +592,7 @@
 <body>
 <div class="container">
     <header class="header">
-        <div class="header-label">DBT Skills &mdash; Adolescent Art Group</div>
+        <div class="header-label">DBT Skills &mdash; Adolescent Group (Virtual)</div>
         <h1>Masks &amp; Mirrors</h1>
         <p class="subtitle">Exploring the space between who you show and who you are</p>
     </header>
@@ -608,8 +608,8 @@
     <div class="page active">
         <div class="section-label warm">Welcome</div>
         <h2><span class="timing">5 to 8 min</span>About today</h2>
-        <p class="body-text">Today's group is an art therapy session. You'll move freely between seven creative stations, each offering a different way to explore the same question: what's the difference between the version of you that other people see and the version of you that exists when no one is watching?</p>
-        <p class="body-text">There is no right way to do this. You don't need to be an artist. You don't need to share anything you make. You choose your stations, your pace, and your depth.</p>
+        <p class="body-text">Today's group is an art therapy session on Zoom. You'll choose from seven creative stations, each offering a different way to explore the same question: what's the difference between the version of you that other people see and the version of you that exists when no one is watching?</p>
+        <p class="body-text">There is no right way to do this. You don't need to be an artist. You don't need to share anything you make. Use whatever materials you have at home. Camera on or off is your choice at every station.</p>
 
         <div class="callout warm">
             <div class="callout-label">Confidentiality</div>
@@ -623,7 +623,7 @@
 
         <div class="meditation-box">
             <h3>Opening: Hands as Mirrors</h3>
-            <p>Everyone receives a small stone or wooden disc. This is your grounding object for the session. You can carry it station to station.</p>
+            <p>Find a small object near you: a stone, a pen, a coin, anything that fits in one hand. This is your grounding object for the session.</p>
             <p>Three slow breaths. On each exhale, let your hands rest open in your lap, palms up. Notice the temperature, weight, and texture of the stone against your skin.</p>
             <p class="med-prompt">"Close your hands around the stone. Notice what it feels like to hold something hidden, something only you can feel. You don't have to name it."</p>
             <p class="med-prompt">"Now open your hands again. Notice the difference. Not better or worse. Just different."</p>
@@ -706,11 +706,6 @@
             </div>
         </div>
 
-        <div class="callout cool">
-            <div class="callout-label">Clinical note</div>
-            <p>This session frames identity work through <strong>what you show, what you feel, and the space between</strong>. It avoids direct body-image language. If participants bring body-related content into their art, validate the feeling without reinforcing the cognition: "It sounds like that feeling takes up a lot of space."</p>
-        </div>
-
         <div class="page-nav">
             <button onclick="showPage(0, navBtns[0])">&#8592; Welcome</button>
             <button onclick="showPage(2, navBtns[2])">Stations &#8594;</button>
@@ -726,70 +721,65 @@
         <div class="progress-section">
             <h3>Your stations</h3>
             <div class="progress-badges">
-                <div class="progress-badge" data-station="mask">The Mask I Wear</div>
-                <div class="progress-badge" data-station="voice">Found Voice</div>
-                <div class="progress-badge" data-station="sound">Soundscape Self</div>
-                <div class="progress-badge" data-station="photo">Refracted</div>
-                <div class="progress-badge" data-station="weave">Woven Selves</div>
-                <div class="progress-badge" data-station="collage">The Space Between</div>
-                <div class="progress-badge" data-station="move">Moving Through</div>
+                <div class="progress-badge" data-station="visual">Visual Arts</div>
+                <div class="progress-badge" data-station="writing">Writing</div>
+                <div class="progress-badge" data-station="drama">Drama</div>
+                <div class="progress-badge" data-station="dance">Dance &amp; Movement</div>
+                <div class="progress-badge" data-station="music">Music &amp; Sound</div>
+                <div class="progress-badge" data-station="fashion">Fashion &amp; Adornment</div>
+                <div class="progress-badge" data-station="intuitive">Open Intuitive</div>
             </div>
         </div>
 
         <div class="station-grid">
-            <div class="station-card" onclick="openStation('mask')">
-                <div class="station-symbol">&#9670;</div>
-                <h3>The Mask I Wear</h3>
-                <p class="station-subtitle">Mixed Media</p>
-                <p class="station-desc">Decorate the outside for the world, the inside for yourself.</p>
+            <div class="station-card" onclick="openStation('visual')">
+                <div class="station-symbol">&#9661;</div>
+                <h3>Visual Arts</h3>
+                <p class="station-subtitle">Making the Invisible Visible</p>
+                <p class="station-desc">Paint, draw, collage, or build a mask. Let color and form show what words can't.</p>
             </div>
 
-            <div class="station-card" onclick="openStation('voice')">
+            <div class="station-card" onclick="openStation('writing')">
                 <div class="station-symbol">&#9998;</div>
-                <h3>Found Voice</h3>
-                <p class="station-subtitle">Blackout Poetry</p>
-                <p class="station-desc">Find poems hiding in other people's words.</p>
+                <h3>Writing &amp; Poetry</h3>
+                <p class="station-subtitle">Words as Mirrors</p>
+                <p class="station-desc">Blackout poetry, letters, and found words for the self you keep hidden.</p>
             </div>
 
-            <div class="station-card" onclick="openStation('sound')">
+            <div class="station-card" onclick="openStation('drama')">
+                <div class="station-symbol">&#9671;</div>
+                <h3>Drama &amp; Performance</h3>
+                <p class="station-subtitle">Rehearsing the Real</p>
+                <p class="station-desc">Scenes, monologues, and dialogues between your mask and what's underneath.</p>
+            </div>
+
+            <div class="station-card" onclick="openStation('dance')">
+                <div class="station-symbol">&#8734;</div>
+                <h3>Dance &amp; Movement</h3>
+                <p class="station-subtitle">The Body Knows</p>
+                <p class="station-desc">Find poses and gestures for the self you show and the self you feel.</p>
+            </div>
+
+            <div class="station-card" onclick="openStation('music')">
                 <div class="station-symbol">&#9835;</div>
-                <h3>Soundscape Self</h3>
-                <p class="station-subtitle">Music &amp; Sound</p>
-                <p class="station-desc">Build playlists for the self you show and the self you feel.</p>
+                <h3>Music &amp; Sound</h3>
+                <p class="station-subtitle">The Sound of Unmasking</p>
+                <p class="station-desc">Build playlists, rhythms, and soundscapes for inside and outside.</p>
             </div>
 
-            <div class="station-card" onclick="openStation('photo')">
-                <div class="station-symbol">&#9683;</div>
-                <h3>Refracted</h3>
-                <p class="station-subtitle">Photography</p>
-                <p class="station-desc">See yourself through texture, distortion, and fragment.</p>
+            <div class="station-card" onclick="openStation('fashion')">
+                <div class="station-symbol">&#10022;</div>
+                <h3>Fashion &amp; Adornment</h3>
+                <p class="station-subtitle">Wearing Your Truth</p>
+                <p class="station-desc">Design, drape, and adorn. What would the unmasked you wear?</p>
             </div>
 
-            <div class="station-card" onclick="openStation('weave')">
-                <div class="station-symbol">&#9881;</div>
-                <h3>Woven Selves</h3>
-                <p class="station-subtitle">Textile &amp; Fiber</p>
-                <p class="station-desc">Weave layers that represent outside and inside experience.</p>
+            <div class="station-card" onclick="openStation('intuitive')">
+                <div class="station-symbol">&#8258;</div>
+                <h3>Open Intuitive</h3>
+                <p class="station-subtitle">Trust the Pull</p>
+                <p class="station-desc">No prompts, no rules. Your creative instinct knows what it needs.</p>
             </div>
-
-            <div class="station-card" onclick="openStation('collage')">
-                <div class="station-symbol">&#9635;</div>
-                <h3>The Space Between</h3>
-                <p class="station-subtitle">Collage</p>
-                <p class="station-desc">Split-panel: what you show on one side, what you keep on the other.</p>
-            </div>
-
-            <div class="station-card" onclick="openStation('move')">
-                <div class="station-symbol">&#10047;</div>
-                <h3>Moving Through</h3>
-                <p class="station-subtitle">Movement</p>
-                <p class="station-desc">Find poses and gestures for your mask and what's underneath.</p>
-            </div>
-        </div>
-
-        <div class="callout cool">
-            <div class="callout-label">Facilitator note</div>
-            <p>At the 30-minute mark: "You have about 30 minutes left. If there's a station you haven't tried, this is a good time to explore." At the 10-minute mark: "Start finding a stopping point. We'll come back together soon."</p>
         </div>
 
         <div class="page-nav">
@@ -801,9 +791,9 @@
     <!-- ════════════════════════════════════════ PAGE 3: GALLERY & CLOSE ════════════════════════════════════════ -->
     <div class="page">
         <div class="section-label warm">Coming back together</div>
-        <h2><span class="timing">8 to 10 min</span>Gallery walk</h2>
-        <p class="body-text">Place any work you're willing to share on the communal table. Anonymous or named, your choice. Walk silently around the display for three to four minutes. No verbal commentary during the walk.</p>
-        <p class="body-text">You have dot stickers. Place a dot next to any piece that resonates with you. You don't have to explain why. If you don't want to display any work, place your grounding stone on the table as your contribution.</p>
+        <h2><span class="timing">8 to 10 min</span>Gallery share</h2>
+        <p class="body-text">If you're willing, hold your work up to the camera or screen-share a photo. You can also describe what you made without showing it. Anonymous descriptions are fine: "Someone made a piece that..." works too.</p>
+        <p class="body-text">As each person shares, type one word in the chat that captures your response. No verbal commentary during the share. Just the word.</p>
 
         <hr class="divider">
 
@@ -812,11 +802,6 @@
         <p class="body-text">Each person completes one sentence:</p>
         <p class="body-text"><strong>"One true thing I noticed today is _______________."</strong></p>
         <p class="body-text">This can reference your own work, someone else's, a feeling you had, or something about the process. After each person shares, the group response is one word: "Heard." No cross-talk, no follow-up questions.</p>
-
-        <div class="callout cool">
-            <div class="callout-label">Facilitator note</div>
-            <p>Model first with a genuine observation. "One true thing" can be as concrete as "I noticed I liked the blue yarn" and does not need to be emotionally deep. The protocol protects participants from the pressure of emotional performance while still creating witness.</p>
-        </div>
 
         <hr class="divider">
 
@@ -848,11 +833,6 @@
         <div class="section-label">Checkout</div>
         <h2>One sentence</h2>
         <p class="body-text">Before you leave: one thing you're taking with you from today, and one concrete thing you'll try this week. Specifics help. "I'll try the honest sentence thing with my mom on Thursday" works better than "I'll be more real."</p>
-
-        <div class="callout cool">
-            <div class="callout-label">Facilitator note</div>
-            <p>Push gently for specificity. "Who will you say it to?" and "When this week?" turn vague intentions into testable commitments. If a participant is vague, reflect it back without judgment: "That sounds important. Can you name one specific moment you'd try it?"</p>
-        </div>
 
         <div class="footer">
             <strong>Crisis resources</strong><br>
@@ -906,89 +886,88 @@ function selectOption(el) {
 
 /* ── Station Data ── */
 const stationContent = {
-    mask: {
-        title: 'The Mask I Wear',
-        subtitle: 'Mixed Media / Sculpture',
-        materials: ['Pre-formed blank masks', 'Acrylic paint &amp; brushes', 'Collage materials (fabric, buttons, sequins, feathers)', 'Markers (fine and broad)', 'Glue sticks, Mod Podge', 'Small craft mirrors (for the mask, not for you)', 'Index cards for labeling'],
+    visual: {
+        title: 'Visual Arts Station',
+        subtitle: 'Making the Invisible Visible',
+        materials: ['Paper (any kind)', 'Pens, pencils, markers, or crayons', 'Scissors &amp; tape or glue', 'Old magazines or junk mail for collage', 'Paper plate or cardboard for mask-making', 'Anything colorful within reach'],
         prompts: [
-            '<strong>Outside / Inside:</strong> Decorate the outside of the mask the way others see you, or the way you want others to see you. On the inside (the concave surface), use color, texture, or words to show what you actually feel.',
-            '<strong>Name the feeling:</strong> Create a mask for a feeling you hide. Give it a name.',
-            '<strong>Recovery mask:</strong> Make a mask that shows what recovery looks like on the outside versus what it feels like on the inside.',
-            '<strong>The one you\'d remove:</strong> Build a mask you wish you could take off. What would your face look like underneath?'
+            '<strong>The mask you wear:</strong> Use a paper plate or draw a face-shaped outline. Decorate the front the way others see you. On the back, use color, texture, or words to show what you actually feel.',
+            '<strong>Split-panel collage:</strong> Fold a piece of paper in half. On the left, collage or draw "What I Let People See." On the right, "What I Keep Hidden." In the fold, write what lives in the gap.',
+            '<strong>Inner landscape:</strong> Draw or paint a landscape that represents your inner world right now. Weather, terrain, time of day are all choices. It doesn\'t have to be pretty.',
+            '<strong>Torn, not cut:</strong> Tear (don\'t cut) paper to create something. The rough edges are part of the piece. Title it "Unfinished."'
         ],
-        note: 'Use pre-formed masks, not plaster-on-face casting. If a participant writes content related to body hatred, validate the feeling without reinforcing the cognition: "It sounds like that feeling takes up a lot of space."'
+        note: 'If a participant creates content related to body hatred, validate the feeling without reinforcing the cognition: "It sounds like that feeling takes up a lot of space." Encourage symbolic rather than representational self-portraiture.'
     },
-    voice: {
-        title: 'Found Voice',
-        subtitle: 'Blackout Poetry &amp; Found-Word Collage',
-        materials: ['Photocopied pages from novels and poetry (pre-screened)', 'Black markers (fine and chisel)', 'Colored pencils &amp; gel pens', 'Washi tape', 'Blank cardstock', 'Glue sticks &amp; scissors', 'Pre-cut word bank strips'],
+    writing: {
+        title: 'Writing &amp; Poetry Station',
+        subtitle: 'Words as Mirrors',
+        materials: ['Paper and pen', 'A book, magazine, or printed page (any text)', 'A dark marker for blackout poetry', 'Colored pens if you have them'],
         prompts: [
-            '<strong>The hidden poem:</strong> Find a poem hiding in this page. Black out everything except the words that feel true about who you really are underneath.',
+            '<strong>Blackout poem:</strong> Take any page of printed text (book, magazine, junk mail). Black out everything except the words that feel true about who you really are underneath. The remaining words are your poem.',
             '<strong>Two poems, one page:</strong> Make two blackout poems from the same page: one that sounds like your "public self," one that sounds like your private thoughts.',
-            '<strong>What the mirror doesn\'t show:</strong> Use the word bank strips and your own handwriting to build a poem with that title.',
-            '<strong>Wish they understood:</strong> Find words on the page that describe what you wish someone understood about you. Circle them. Connect them.'
+            '<strong>Letter to your mask:</strong> Write a short letter to the version of you that other people see. What would you say if you could be honest with it?',
+            '<strong>What the mirror doesn\'t show:</strong> Write a poem or paragraph with that title. Let it go wherever it goes.'
         ],
-        note: 'All source texts are pre-screened to exclude diet culture language, body commentary, or food-focused content. The word bank avoids body-related words. Blackout poetry is one of the lowest-threat art forms because you\'re selecting rather than generating.'
+        note: 'Blackout poetry is one of the lowest-threat art forms because you\'re selecting rather than generating. Useful for participants who say "I\'m not creative" or freeze at a blank page.'
     },
-    sound: {
-        title: 'Soundscape Self',
-        subtitle: 'Music &amp; Sound',
-        materials: ['Tablets or Chromebooks with headphones', 'Curated music library (Spotify or pre-downloaded)', 'Printed Soundscape Map worksheets', 'Colored pencils', 'Small percussion instruments (rain stick, hand drum, chime bar)', 'Index cards'],
+    drama: {
+        title: 'Drama &amp; Performance Station',
+        subtitle: 'Rehearsing the Real',
+        materials: ['A small open space', 'Optional: a hat, scarf, or any accessory', 'A chair (for two-chair exercise)', 'Paper for writing monologues'],
         prompts: [
-            '<strong>Two playlists:</strong> Build two short playlists (3 to 5 songs each): one that represents the version of you others see, and one that represents who you are when no one is watching. Fill in your Soundscape Map.',
+            '<strong>Two-chair conversation:</strong> Place two chairs facing each other (or use two spots on your floor). Sit in one as your "mask self." Then switch to the other chair and respond as your real self. Go back and forth.',
+            '<strong>Mask monologue:</strong> Speak as your mask for 60 seconds. What does it say? What does it promise? What does it demand? Then speak as the person underneath for 60 seconds.',
+            '<strong>The scene nobody sees:</strong> Act out a brief scene from a moment when you were completely yourself. Where were you? What were you doing? Recreate it, even if it\'s small.',
+            '<strong>Unmasking scene:</strong> Create a short performance (30 seconds) of someone removing a mask. It can be literal or metaphorical. What does the audience see when the mask comes off?'
+        ],
+        note: 'Camera can be on or off for this station. Some participants will want to perform for the group later; others will want to do this privately. Both are valid. The two-chair exercise can be done silently (just shifting posture between chairs) if speaking feels like too much.'
+    },
+    dance: {
+        title: 'Dance &amp; Movement Station',
+        subtitle: 'The Body Knows',
+        materials: ['A small clear space to move', 'A scarf, towel, or piece of fabric', 'Headphones and a song you choose', 'Camera off is completely fine'],
+        prompts: [
+            '<strong>Two poses:</strong> Find a pose that represents "the version of me other people see." Hold it for three breaths. Shift into a pose for "the version of me that\'s real." Notice what changed.',
+            '<strong>Scarf movement:</strong> Hold a scarf or piece of fabric. Move it the way your hidden feelings would move if they had a body. Fast, slow, sharp, flowing. The focus is the fabric, not you.',
+            '<strong>Three walks:</strong> Walk across your space three times. First: the way you walk when people are watching. Second: the way you walk alone. Third: as if no one has ever told you how to walk.',
+            '<strong>Shake it off:</strong> Put on a song. For the first half, move the way you think you\'re "supposed" to move. Halfway through, stop performing and move however your body actually wants to.'
+        ],
+        note: 'Camera off is the default recommendation for this station. All prompts avoid references to body shape, size, weight, or appearance. The scarf prompt works well as an entry point because it externalizes movement onto the object. If a participant shows signs of dissociation (glazed expression, sudden stillness), redirect to the grounding object.'
+    },
+    music: {
+        title: 'Music &amp; Sound Station',
+        subtitle: 'The Sound of Unmasking',
+        materials: ['Phone or computer with music access', 'Headphones', 'Paper and pen for soundscape map', 'Any objects that make sound (optional)'],
+        prompts: [
+            '<strong>Two playlists:</strong> Build two short playlists (3 to 5 songs each): one that represents the version of you others see, and one that represents who you are when no one is watching.',
             '<strong>One song:</strong> Find one song that captures a feeling you\'ve never said out loud. Write down the title and one sentence about why.',
-            '<strong>Two rhythms:</strong> Use the percussion instruments to create two short rhythms: one that sounds like your mask and one that sounds like what\'s underneath.',
-            '<strong>Liner notes:</strong> Write a liner note for an album about your life that nobody else has heard. What would listeners need to know before pressing play?'
+            '<strong>Liner notes:</strong> Write a liner note for an album about your life that nobody else has heard. What would the album be called? What would listeners need to know before pressing play?',
+            '<strong>Sound portrait:</strong> Use whatever is around you (tapping, humming, clapping, crinkling paper) to create two short sound sequences: one for your mask, one for underneath.'
         ],
-        note: 'The music library is pre-screened for content. Headphones provide a private, boundaried experience. The percussion option gives a body-based alternative that avoids lyric content entirely.'
+        note: 'Headphones provide a private, boundaried experience. This station often draws participants who feel overwhelmed at more visible stations. If someone wants to share a song during closing, they can screen-share or drop a link in the chat.'
     },
-    photo: {
-        title: 'Refracted',
-        subtitle: 'Abstracted Photography',
-        materials: ['Tablets or phones with cameras', 'Textured glass, prisms, colored cellophane', 'Lace fabric, small LED lights', 'Photo printer (Polaroid style)', 'Black and white cardstock for mounting', 'Markers for captioning'],
+    fashion: {
+        title: 'Fashion &amp; Adornment Station',
+        subtitle: 'Wearing Your Truth',
+        materials: ['Access to your closet or nearby clothing', 'Scarves, jewelry, accessories', 'Paper and markers for designing', 'Camera (optional, for self-portraits)'],
         prompts: [
-            '<strong>Through the filter:</strong> Take a self-portrait through one of the textured materials (glass, prism, cellophane, lace). Don\'t try to get a clear image. The distortion IS the art. Title it.',
-            '<strong>Hands:</strong> Photograph your hands doing something that feels like the real you. Avoid including your face.',
-            '<strong>Shadow and symbol:</strong> Take two photos: one of your shadow, and one of something in this room that represents how you feel right now. Pair them together with a one-sentence caption.',
-            '<strong>The detail nobody notices:</strong> Photograph a small detail of yourself (wrist, shoe, ear, knuckle) that nobody notices. Give it a title like it\'s in a museum.'
+            '<strong>Two outfits:</strong> Put together (or sketch) two outfits: one that represents how you present yourself to the world, and one that represents who you actually are. What\'s different? What stays the same?',
+            '<strong>Armor vs. adornment:</strong> Choose one item you wear as armor (protection, hiding, blending in) and one you wear as adornment (expression, pleasure, identity). Hold them both up. What do they say about you?',
+            '<strong>Design the unmasked look:</strong> Sketch or describe the outfit you would wear if no one could judge you. Color, texture, silhouette, accessories. Be specific.',
+            '<strong>One item:</strong> Find one item of clothing or an accessory that feels like the most "you" thing you own. Put it on or hold it. What makes this one feel real?'
         ],
-        note: 'No full-face, full-body, or mirror selfies. All prompts are designed to fragment, abstract, or redirect the gaze. Textured glass ensures any self-portrait is inherently distorted, normalizing the idea that self-perception is always filtered. If a participant becomes distressed, redirect to the shadow or detail prompts.'
+        note: 'This station can be done entirely through sketching and design if a participant doesn\'t want to interact with their actual clothing. Avoid any language about body size or fit. Frame everything around expression and identity, not appearance.'
     },
-    weave: {
-        title: 'Woven Selves',
-        subtitle: 'Textile &amp; Fiber',
-        materials: ['Small cardboard looms (pre-strung)', 'Yarn in assorted colors and textures', 'Fabric strips (denim, flannel, satin, burlap, tulle)', 'Ribbon, embroidery floss', 'Blunt-tip tapestry needles', 'Scissors', 'Color/texture reference cards'],
+    intuitive: {
+        title: 'Open Intuitive Station',
+        subtitle: 'Trust the Pull',
+        materials: ['Whatever you have', 'Whatever you want', 'No requirements'],
         prompts: [
-            '<strong>Two layers:</strong> Weave two layers: the top represents what people see (choose matching textures and colors). Underneath, weave with textures and colors that represent your inner experience.',
-            '<strong>Three strips:</strong> Choose three fabric strips. One for who you were before your eating disorder, one for who you are now, and one for who you want to become. Weave them together.',
-            '<strong>Self-soothe:</strong> Make a small woven piece using only textures you find comforting. This is a self-soothing object you can keep.',
-            '<strong>Messy on purpose:</strong> Weave something messy. Let threads hang, mix clashing colors, leave gaps. Title it.'
+            'There are no prompts at this station. Your creative instinct knows what it needs.',
+            'Use any materials, any medium, any approach. Make something, destroy something, rearrange something.',
+            'The only invitation: let it be about masks, mirrors, or the space between who you show and who you are. Or don\'t. This is yours.'
         ],
-        note: 'If a participant appears to be weaving rigidly or perfectionistically (tight, controlled rows, visible frustration at mistakes), gently invite them to try the "messy on purpose" prompt. Fabric strips are pre-cut. The color/texture reference card uses suggestions, not assignments.'
-    },
-    collage: {
-        title: 'The Space Between',
-        subtitle: 'Split-Panel Collage',
-        materials: ['Large cardstock, pre-folded down the middle', 'Pre-screened magazines (nature, architecture, travel, abstract)', 'Printed image packs (landscapes, textures, doors, windows)', 'Oil pastels &amp; soft pastels', 'Glue sticks &amp; scissors', 'Tissue paper for layering'],
-        prompts: [
-            '<strong>Left / Right / Fold:</strong> On the left panel, collage "What I Let People See." On the right, "What I Keep Hidden." In the fold between them, write or draw what lives in the gap.',
-            '<strong>Doors and walls:</strong> Create a collage of doors, windows, and walls. Some open, some closed, some cracked. Label which parts of yourself each one represents.',
-            '<strong>Inner landscape:</strong> Build a landscape that represents your inner world right now. Weather, terrain, time of day are all choices.',
-            '<strong>Torn, not cut:</strong> Tear (don\'t cut) images and paper to create a collage. The rough edges are part of the piece. Title it "Unfinished."'
-        ],
-        note: 'Magazines are pre-screened: no fashion, fitness, diet, food, or celebrity content. Printed image packs provide curated, body-neutral imagery. Oil pastels are preferred over finger paint (which can feel regressive, and its tactile similarity to food substances can be triggering for this population).'
-    },
-    move: {
-        title: 'Moving Through',
-        subtitle: 'Guided Movement &amp; Gesture',
-        materials: ['Defined floor space (tape or rug, ~8x8 ft)', 'Scarves or fabric lengths (silk, chiffon)', 'Printed prompt cards at eye level', 'Bluetooth speaker with ambient playlist', 'Privacy screen or curtain'],
-        prompts: [
-            '<strong>Two poses:</strong> Find a pose that represents "the version of me other people see." Hold it for three breaths. Now shift into a pose for "the version of me that\'s real." Notice what changed.',
-            '<strong>Scarf movement:</strong> Choose a scarf. Move it the way your hidden feelings would move if they had a body. Fast, slow, sharp, flowing.',
-            '<strong>Gentle adjust:</strong> With a partner or alone: strike a "mask pose" (how you present). Then gently adjust one small thing (angle of hand, tilt of head) toward what feels more authentic.',
-            '<strong>Three walks:</strong> Walk across the space three times. First: the way you walk when people are watching. Second: the way you walk alone. Third: as if no one has ever told you how to walk.'
-        ],
-        note: 'This station must have a privacy screen. All prompts avoid references to body shape, size, weight, or appearance. Offer the scarf prompt as a default entry point because it externalizes movement onto the object. If a participant shows signs of dissociation (glazed expression, sudden stillness), redirect to the grounding stone. Partner work is fully optional.'
+        note: 'This station exists for participants who feel constrained by prompts or who have an idea that doesn\'t fit the other stations. It\'s also a landing spot for participants who want to continue work they started elsewhere. No direction needed from the facilitator unless asked.'
     }
 };
 
@@ -1015,8 +994,7 @@ function openStation(id) {
         '<div class="modal-station-subtitle">' + s.subtitle + '</div>' +
         '<p class="body-text" style="margin-bottom:1rem;">Choose one or more prompts. There\'s no requirement to do all of them.</p>' +
         promptsHtml +
-        materialsHtml +
-        '<div class="info-box"><p><strong>Facilitator note:</strong> ' + s.note + '</p></div>';
+        materialsHtml;
 
     modal.classList.add('show');
 }
